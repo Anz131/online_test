@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+
+{%block body_block%}
+<div class="container text-center mt-5 text-primary">
+    <h1>Welcome To Our Store</h1>
+</div>
+<div class="text-center mt-2">
+      <h4> Question </h4>
+</div>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+  <img src="{{mobile.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-title">{{test.question}}</p>
+    <p class="card-text">A. &nbsp&nbsp{{test.a}}</p>
+    <p class="card-text">B. &nbsp&nbsp{{test.b}}</p>
+    <p class="card-text">C. &nbsp&nbsp{{test.c}}</p>
+    <p class="card-text">D. &nbsp&nbsp{{test.d}}</p>
+  </div>
+  <div class="card-body">
+    <a href="{%url 'editqus' mobile.id%}" class="card-link">Edit</a>
+
+  </div>
+</div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
+

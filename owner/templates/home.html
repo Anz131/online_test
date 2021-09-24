@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+
+{%block body_block%}
+<div class="container text-center mt-5 text-primary">
+    <h1>Welcome To Online Test</h1>
+</div>
+<div class="text-center mt-2">
+    <h4> Questions for the test</h4>
+    <h4>You can update any time.</h4>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            {%if messages%}
+            {%for message in messages%}
+                <div>
+                    {{message}}
+                </div>
+            {%endfor%}
+            {%endif%}
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        {%for test in tests%}
+        <div class="col-3 mr-3 p-2 mx-2">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-title">{{test.question}}</p>
+                    <p class="card-text">A. &nbsp&nbsp{{test.a}}</p>
+                    <p class="card-text">B. &nbsp&nbsp{{test.b}}</p>
+                    <p class="card-text">C. &nbsp&nbsp{{test.c}}</p>
+                    <p class="card-text">D. &nbsp&nbsp{{test.d}}</p>
+                </div>
+                <div class="card-body">
+                    <a href="{%url 'editqus' test.id %}" class="btn btn-primary">Edit</a>
+                </div>
+
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+</div>
+
+{%endblock%}
+
+
+
+
